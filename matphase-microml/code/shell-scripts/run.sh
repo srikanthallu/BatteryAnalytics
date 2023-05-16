@@ -16,11 +16,11 @@ python m1_idk_predict.py --idk_th 0.01 --device gpu \
 
 #train IDK 
   python train_idk.py --device gpu \
-  --gpus 4 --epochs 100 \
+  --gpus 3 --epochs 100 \
   --batch_size 20000 \
   --save_freq 10 \
   --learning_rate 0.0001 \
-  --dir_img ../data/train_images/ \
+  --dir_img ../../bharat-results/train_images/ \
   --dir_train ../output/m1/train/ \
   --dir_test ../output/m1/validation/ \
   --dir_misclass misclass/ \
@@ -46,7 +46,7 @@ python m1_idk_predict.py --idk_th 0.01 --device gpu \
 python main_m2_ce.py --gpus 4 \
 --batch_size 1024 \
 --loc_size 5 \
---in_channel 1 \
+--in_channel 4 \
 --epochs 10 \
 --num_workers 8 \
 --learning_rate 0.001 \
@@ -56,6 +56,8 @@ python main_m2_ce.py --gpus 4 \
 --dir_mask ../data/ \
 --dir_idk_train ../output/idk/train/ \
 --dir_idk_test ../output/idk/validation/ \
+--dir_uq_train ../output/m1/train/uq/ \
+--dir_uq_test ../output/m1/validation/uq/ \
 --dir_m1out_train ../output/m1/train/prediction/ \
 --dir_m1out_test ../output/m1/validation/prediction/ \
 --model_path checkpoint/m2-in_1-embed/ \
