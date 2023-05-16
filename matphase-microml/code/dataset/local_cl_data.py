@@ -55,7 +55,7 @@ class M2Dataset(Dataset):
             mask=mask/255.0
             nmasks=np.where((mask>0) & (mask<1.0), 2.0, mask)
             idk_arr=np.load(idk_dir+fname+'._idk.npy')
-            uq_arr=np.load(uq_dir+fname+'.__idk.npy')
+            uq_arr=np.load(uq_dir+fname+'._m1.npy')
             pos=np.argwhere(idk_arr==1)
             for i in range(pos.shape[0]):
                 tmp_poi.append((pos[i,0],pos[i,1]))
