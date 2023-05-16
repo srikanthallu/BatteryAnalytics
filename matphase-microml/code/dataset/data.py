@@ -142,7 +142,7 @@ class IDKDataset(Dataset):
         out0 = np.load(self.out_dir+fname+'._out_0.npy')
         out1 = np.load(self.out_dir+fname+'._out_1.npy')
         out2 = np.load(self.out_dir+fname+'._out_1.npy')
-        uq = np.load(self.uq_dir+fname+'.__m1.npy') 
+        uq = np.load(self.uq_dir+fname+'._m1.npy') 
         
         px = self.pos2d[i][0]
         py = self.pos2d[i][1]
